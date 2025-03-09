@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Incidencia</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="build/css/app.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="build/img/ruizgijon.png" alt="LogoIzq">
+            
+            Gestor de Incidencias
+        </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro.html">Registrar Incidencia</a></li>
+                </ul>
+            </div>
+            <a class="navbar-brand2" href="#">
+              <img src="build/img/junta.png" alt="LogoDer">
+          </a>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <!-- Formulario -->
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-8 bg-light p-4 rounded">
+            <h2 class="text-center">Formulario de Incidencias</h2>
+            <form action="#" class="needs-validation" novalidate>
+              <!-- Nombre del Profesor -->
+              <div class="mb-3">
+                <label for="Profesor" class="form-label">Profesor</label>
+                <input type="text" id="Profesor" class="form-control" placeholder="Introduce el nombre completo" required />
+                <div class="invalid-feedback">El nombre del profesor es obligatorio.</div>
+              </div>
+  
+              <!-- Departamento y clase -->
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="departamento" class="form-label">Departamento</label>
+                  <select id="departamento" class="form-select" required>
+                    <option value="">Seleccione Departamento</option>
+                    <option value="Lenguaje">Lenguaje</option>
+                    <option value="Matematicas">Matematicas</option>
+                    <option value="Historia">Historia</option>
+                    <option value="Ingles">Ingles</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona un departamento</div>
+                </div>
+                <div class="col">
+                  <label for="Clase" class="form-label">Clase</label>
+                  <select id="Clase" class="form-select" required>
+                    <option value="">Seleccione clase</option>
+                    <option value="Clase1">Clase 1</option>
+                    <option value="Clase2">Clase 2</option>
+                    <option value="Clase3">Clase 3</option>
+                    <option value="Clase4">Clase 4</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona una clase.</div>
+                </div>
+              </div>
+  
+              <!-- Fecha y hora -->
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="fecha" class="form-label">Fecha</label>
+                  <input type="date" id="fecha" class="form-control" required />
+                  <div class="invalid-feedback">Selecciona una fecha válida.</div>
+                </div>
+                <div class="col">
+                  <label for="hora" class="form-label">Hora</label>
+                  <input type="time" id="hora" class="form-control" required />
+                  <div class="invalid-feedback">La hora es obligatoria.</div>
+                </div>
+              </div>
+  
+              <!-- Reponsable y cargo -->
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="responsable" class="form-label">Reponsable</label>
+                  <input type="text" id="responsable" class="form-control" placeholder="Nombre del responsable" required />
+                  <div class="invalid-feedback">Este campo es obligatorio.</div>
+                </div>
+                <div class="col">
+                  <label for="cargo" class="form-label">Cargo</label>
+                  <input type="text" id="cargo" class="form-control" placeholder="Cargo" required />
+                  <div class="invalid-feedback">Este campo es obligatorio.</div>
+                </div>
+              </div>
+  
+              <!-- Incidencia -->
+              <div class="mb-3">
+                <label for="incidencia" class="form-label">Incidencia</label>
+                <textarea id="incidencia" class="form-control" rows="4" placeholder="Describe la Incidencia" required></textarea>
+                <div class="invalid-feedback">La descripción de la incidencia es obligatoria.</div>
+              </div>
+  
+              <!-- Campos adicionales -->
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" id="telefono" class="form-control" placeholder="Ej. 600123456" pattern="[0-9]{9}" required />
+                <div class="invalid-feedback">Introduce un número de teléfono válido.</div>
+              </div>
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" id="correo" class="form-control" placeholder="Ej. ejemplo@correo.com" required />
+                <div class="invalid-feedback">Introduce un correo electrónico válido.</div>
+              </div>
+  
+              <!-- Radios y checkboxes -->
+              <div class="mb-3">
+                <label class="form-label">Tipo de incidente</label>
+                <div>
+                  <div class="form-check">
+                    <input type="radio" id="leve" name="tipo-incidente" class="form-check-input" value="leve" required />
+                    <label for="leve" class="form-check-label">Leve</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="grave" name="tipo-incidente" class="form-check-input" value="grave" required />
+                    <label for="grave" class="form-check-label">Grave</label>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Campo de archivo -->
+              <div class="mb-3">
+                <label for="archivo" class="form-label">Adjuntar documento</label>
+                <input type="file" id="archivo" class="form-control" accept=".pdf,.jpg,.png" />
+              </div>
+  
+              <!-- Botón de envío -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; Gestor de Incidencias. Todos los derechos reservados.</p>
+        <p>Dirección: Calle Ejemplo, 123 - Teléfono: +34 000 000 000</p>
+        <p><a href="#" class="text-white">Facebook</a> | <a href="#" class="text-white">Twitter</a> | <a href="#" class="text-white">Instagram</a></p>
+    </footer>
+    
+    <script src="build/js/validation.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html>

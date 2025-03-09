@@ -1,0 +1,60 @@
+@use 'vars' as v;
+@use 'mixins' as m;
+
+//Configuración Global
+body {
+    font-family: v.$font-family-base;
+}
+
+//Navegación
+.navbar {
+    background-color: v.$primary !important;
+}
+
+//Imagen
+.navbar-brand img {
+    width: 110px;
+    height: 50px;
+}
+
+.navbar-brand2 img {
+    width: 70px;
+    height: 50px;
+}
+
+
+//Botones Personalizados
+.btn-primary {
+    background-color: v.$primary;
+    border: none;
+    
+    &:hover {
+        background-color: darken(v.$primary, 10%);
+    }
+}
+
+.btn-danger {
+    background-color: v.$danger;
+    border: none;
+    
+    &:hover {
+        background-color: darken(v.$danger, 10%);
+    }
+}
+
+.btn-success {
+    background-color: v.$success;
+    border: none;
+    
+    &:hover {
+        background-color: darken(v.$success, 10%);
+    }
+}
+
+//Footer
+footer {
+    background-color: v.$secondary;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
