@@ -6,49 +6,107 @@ body {
     font-family: v.$font-family-base;
 }
 
-//Navegación
+// Estilos para el header sin navbar
+.header {
+    background-color: v.$primary; // Mismo color que el navbar
+    padding: 20px 0; // Espaciado arriba y abajo
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; // Ajusta la altura según tu diseño
+}
+
+//logo centrado
+.logo-container {
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+}
+
+
+// Estilos generales del navbar
 .navbar {
-    background-color: v.$primary !important;
-}
-
-//Imagen
-.navbar-brand img {
-    width: 110px;
-    height: 50px;
-}
-
-.navbar-brand2 img {
-    width: 70px;
-    height: 50px;
-}
-
-
-//Botones Personalizados
-.btn-primary {
     background-color: v.$primary;
+    padding: 10px 0;
+}
+
+// Botón del menú hamburguesa
+.navbar-toggler {
     border: none;
-    
-    &:hover {
-        background-color: darken(v.$primary, 10%);
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); // Asegura que el icono sea visible en fondo oscuro
+}
+
+// Estilos para centrar los elementos del navbar
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+// Responsive: Ajustes para móviles y tablets
+@media (max-width: 991px) {
+    .navbar {
+        text-align: center;
+    }
+
+    .navbar-collapse {
+        text-align: center;
+        background-color: v.$primary;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
-.btn-danger {
-    background-color: v.$danger;
-    border: none;
-    
-    &:hover {
-        background-color: darken(v.$danger, 10%);
+// Estilos para la tabla de incidencias
+.table {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: v.$dark;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+// Estilos para los botones de estado
+.estado-btn {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+
+    &.btn-danger {
+        background-color: #dc3545;
+    }
+
+    &.btn-success {
+        background-color: #28a745;
     }
 }
 
-.btn-success {
-    background-color: v.$success;
-    border: none;
-    
-    &:hover {
-        background-color: darken(v.$success, 10%);
-    }
+.tipoInc {
+    display: flex;
+    flex-wrap: nowrap;//No saltos de linea
+    align-items: center;
 }
 
 //Footer
